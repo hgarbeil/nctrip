@@ -109,6 +109,7 @@ nav a:hover, nav a:focus{
     width: 300px ;
     display : flex ;
     flex-direction: column ;
+    justify-content : center ;
     border-radius : 15px ;
     border: 2px white solid ; 
     
@@ -156,7 +157,7 @@ nav a:hover, nav a:focus{
     padding: 15px ; 
     text-align : center ;
     border-radius : 12px ;
-    min-width: 200px ;
+    min-width: 300px ;
     /* max-width: 350px; */
     
     
@@ -167,7 +168,8 @@ nav a:hover, nav a:focus{
     margin: auto ;
     flex: 0 1 25% ;
     font-size: 1.2rem ;
-    width: 80% ; 
+
+    /* width: 80% ;  */
     letter-spacing: 2px ;
 }
 .date-time {
@@ -281,6 +283,7 @@ nav a:hover, nav a:focus{
         display: flex ;
         flex-direction: column ;
         /* justify-content: space-between ; */
+        align-items: center ;
         padding: 10px ;
         margin: 0 ;
         font-size : 1.1rem ;
@@ -288,10 +291,28 @@ nav a:hover, nav a:focus{
     .top-tiles{
         flex-direction: column ;
         align-items: center ;
-        justify-content: space-evenly;
+        justify-content: space-around ;
         padding: 20px ;
+        gap: 20px ;
     }
 
+    .top-tiles *{
+        display: flex ;
+        justify-content: center;
+    }
+
+    .weather-select * {
+        font-size: .7rem ;
+       
+    }
+    .weather-select, .date-time {
+        font-size: .9rem ;
+        width: 60% ;
+        margin-top: 10px ;
+    }
+    .weather-select{
+        order:1 ;
+    }
 }
 
 .active.content-table {
