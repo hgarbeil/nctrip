@@ -1,0 +1,29 @@
+:root {
+    --hcolor : #aa35aa ;
+    --tshadow : 0 4px 8px rgba(0,0,0,.4) ;
+}
+
+/* body {
+    background-color: #cfcf11 ;
+    background-image : url("https://source.unsplash.com/1200x1200/?north carolina?hiking") ;
+    background-size: cover ;
+    align-items: center;
+    /* display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ; */
+/* } */ */
+
+
+
+
+/* not being used */
+.mapimg {
+    display : flex ;
+    
+    justify-content: space-evenly;
+    min-width: 80vw ;
+    padding : 25px  ;
+    border: 3px solid darkgreen ;
+
+}

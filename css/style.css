@@ -1,0 +1,355 @@
+:root{
+    --color-logo : navy ;
+    --color-text : blue ;
+    --color-text-light : #cfcfcf ;
+    --color-text-dark : #116466 ;
+    --background : rgba(85, 214,170,.85);
+    --text-accent : rgb(120,100,125) ;
+    --hcolor : #aa35aa ;
+    --tshadow : 0 4px 8px rgba(0,0,0,.4) ;
+}
+
+*,*::before{
+    box-sizing: border-box;
+}
+body {
+    background-image : url("https://source.unsplash.com/1200x1200/?north carolina?autumn") ;
+    background-size : cover ;
+    background-repeat : no-repeat ;
+    padding: 0px ;
+    font-family: sans-serif ;
+}
+header {
+    background : var(--background);
+    position : fixed ;
+    top: 0;
+    left: 0;
+    margin-left: 0px  ;
+    text-align: center ;
+    width: 100% ;
+    z-index: 999 ;
+    padding: 15px ;
+    color : var(--color-text-dark);
+
+}
+
+nav {
+    /* display: none ; */
+    background: var(--background);
+    position: absolute;
+    text-align: left ;
+    top: 100% ;
+    width: 100% ;
+    left: 0 ;
+}
+
+nav ul {
+    list-style: none ;
+    margin: 0 ;
+    padding: 0 ;
+    display: flex ;
+    justify-content : end ;
+}
+
+nav li {
+    margin-bottom: 1em ;
+    margin-left : 1em ;
+
+}
+nav a {
+    
+    padding : .5em ;
+    font-size : 1.2rem ;
+    color: var(--color-text-dark) ;
+    text-decoration: none ;
+
+
+}
+
+
+nav a:hover, nav a:focus{
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+.main {
+    margin-top: 200px ;
+    color: white ;
+    display: flex ;
+    flex-direction: column;
+}
+
+.logo {
+    color: var(--color-text-dark) ;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic ;
+    letter-spacing: 2px ;
+}
+
+
+.container-whenwhere {
+    display: flex ;
+    justify-content: space-between ;
+    padding: 10px ;
+    margin: 0 ;
+    font-size : 1.1rem ;
+}
+
+.top-tiles{
+    display: flex ;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.attractions-tile,
+.hike-tile,
+.current-weather {
+    background-color: rgba(230,100,100,.7);
+    height: 250px ;
+    width: 300px ;
+    display : flex ;
+    flex-direction: column ;
+    border-radius : 15px ;
+    border: 2px white solid ; 
+    
+}
+
+
+.hike-tile {
+    background-image : url("https://source.unsplash.com/400x400/?north carolina?hiking") ;
+    text-shadow : 0px 4px 8px rgba(0,0,0,.3) ;
+    font-size : 1.5em ;
+    align-items : center ;
+    list-style: none ;
+
+}
+
+.attractions-tile {
+    background-image : url("https://source.unsplash.com/400x400/?amusement parks?pottery") ;
+    text-shadow : 0px 4px 8px rgba(0,0,0,.3) ;
+    font-size : 1.5em ;
+    align-items : center ;
+    list-style: none ;
+
+}
+
+.attractions-tile a,
+.hike-tile a {
+    text-decoration: none;
+
+    
+    color : white ;
+    text-shadow : 0px 4px 8px rgba(85, 214,170,.85);
+}
+
+.attractions-tile a:link,
+.hike-tile a:link {
+    text-decoration: none ;
+}
+
+.weather-select {
+    display: flex ;
+    flex-direction: column ;
+    justify-content : space-evenly ;
+    font-size: 1.4rem ;
+    background:rgba(230,100,100,.3);
+    padding: 15px ; 
+    text-align : center ;
+    border-radius : 12px ;
+    min-width: 200px ;
+    /* max-width: 350px; */
+    
+    
+}
+.weather-select * {
+    padding : 8px ;
+    border-radius: 4px ;
+    margin: auto ;
+    flex: 0 1 25% ;
+    font-size: 1.2rem ;
+    width: 80% ; 
+    letter-spacing: 2px ;
+}
+.date-time {
+    display: flex ;
+    flex-direction: column ;
+    justify-content : space-evenly ;
+    font-size: 1.2rem ;
+    background:rgba(230,100,100,.3);
+    padding: 15px ; 
+    text-align : center ;
+    border-radius : 12px ;
+    min-width: 200px ;
+    letter-spacing: 2px;
+
+}
+.weather-select input {
+    margin-top: 5px ;
+    background-color:rgba(85, 214,170,.85) ;
+    color: var(--color-logo);
+}
+
+.weather-icon {
+    height: 3.5em ;
+    width: 3.5em ;
+    margin-top: 0px ;
+}
+.weather-desc {
+    margin-top: 1.5rem ;
+}
+
+.weather-item {
+    display: flex ;
+    justify-content : space-apart ;
+    padding : .3rem ;
+    font-size : 1.rem ;
+    width: 80% ;
+    text-align : center ;
+    
+}
+
+.weather-item div {
+    flex : 1 1 50% ;
+
+}
+
+.topdiv {
+    color: var(--hcolor) ;
+    display: flex ;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: space-evenly;
+}
+
+.topdiv h1 {
+    color: var(--color-text-light);
+    text-shadow: var(--tshadow);
+}
+
+
+.mapdiv {
+    height:350px ;
+    
+    /* min-width: 75vw; */
+    
+    /* margin-bottom: 25px ; */
+    /* flex: 1 1 .5 ; */
+    min-width: 80% ;
+    max-width: 95% ;
+    /* max-width: 1280px ; */
+    border-radius: 25px ;
+    margin-bottom : 25px  ;
+    border: 3px solid #4056A1;
+}
+.imgdiv {
+    background-image : url("https://source.unsplash.com/600x600/?north carolina?autumn") ;
+    overflow: hidden;
+    border-radius: 25px ;
+    height:350px ;
+    width: 50% ; 
+    background-position: center ;
+    background-repeat: no-repeat ;
+    flex: 1 1 .5 ;
+    
+
+    
+}
+.content-table {
+    border-collapse :collapse ;
+    margin: 50px  ;
+    font-size: 0.9rem ;
+    /* min-width: 450px ; */
+    border-radius: 5px 5px 0 0 ;
+    overflow: hidden ;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    align-self: center ;
+}
+
+@media (max-width:768px){
+    .content-table {
+        font-size : .75em ;
+        width: 80% ;
+    }
+    .content-table th {
+        font-size: .8em ;
+        padding: 3px ;
+    }
+    .priority-low{
+        display:none ;
+    }
+    .container-whenwhere {
+        display: flex ;
+        flex-direction: column ;
+        /* justify-content: space-between ; */
+        padding: 10px ;
+        margin: 0 ;
+        font-size : 1.1rem ;
+    }
+    .top-tiles{
+        flex-direction: column ;
+        align-items: center ;
+        justify-content: space-evenly;
+        padding: 20px ;
+    }
+
+}
+
+.active.content-table {
+    display: none ;
+}
+.content-table caption{
+    font-size: 1.8em ;
+    font-weight:bold ;
+    margin-bottom : 15px ;
+}
+
+.content-table th {
+    font-size: 1.2em ;
+    padding: 5px ;
+}
+
+.content-table thead tr {
+    
+    background-color: #00cf68 ;
+    color: white ;
+    text-align: left ;
+    font-weight: bold ;
+}
+
+.content-table tbody th, 
+.content-table tbody td
+ {
+
+    padding: 12px 15px ;
+
+
+}
+
+.content-table tbody tr {
+    border-bottom : 1px solid #dddddd ;
+    background-color: white ;
+    color: black ;
+}
+
+.content-table tbody tr.active:nth-of-type(odd) {
+    background-color: #ffaa00 ;
+    color: yellow;
+}
+.content-table tbody tr.active:nth-of-type(even) {
+    background-color: #ffaa00 ;
+    color: yellow;
+}
+
+
+
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 4px solid #009879 ;
+}
+
+
+
