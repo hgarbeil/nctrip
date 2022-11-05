@@ -26,7 +26,7 @@ function getRequestObject() {
 ajaxUtils.sendGetRequest = 
   function(requestUrl, responseHandler, isJsonResponse) {
     var request = getRequestObject();
-    console.log(requestUrl);
+    // console.log(requestUrl);
     request.onreadystatechange = 
       function() { 
         handleResponse(request, 

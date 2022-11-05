@@ -2,6 +2,8 @@ const dateEl = document.querySelector('.cur-date') ;
 const timeEl = document.querySelector('.cur-time') ;
 const selectEl = document.querySelector('.select-city') ;
 const currentweatherEl = document.querySelector('.current-weather');
+const toggleButtonEl = document.querySelector('.toggle-button');
+const navbarLinksEl = document.querySelector ('.navbar-links') ;
 
 const mainEl = document.querySelector('.main') ;
 const apikey = '12e8d9bf6c162d5b2d92bb4fd02f440d' ;
@@ -13,11 +15,43 @@ var townLon = -79 ;
 var map ;
 var myhikes=[] ;
 var myactivities=[] ;
+var activeFlag  ;
+
 
 Number.prototype.padLeft = function(base,chr){
     var  len = (String(base || 10).length - String(this).length)+1;
     return len > 0? new Array(len).join(chr || '0')+this : this;
 }
+
+
+
+
+activeFlag = localStorage.getItem ("navactive") ;
+console.log(activeFlag);
+if (activeFlag==true){
+    console.log("in localStorage") ;
+    navbarLinksEl.classList.add('active');
+}
+for (let classy of navbarLinksEl.classList){
+    console.log(classy) ;
+}
+toggleButtonEl.addEventListener('click',()=>{
+// function hamburger(){  
+    
+    classList = navbarLinksEl.classList ;
+    // console.log("hello"+) ;
+    if (navbarLinksEl.classList.contains('active')){
+        navbarLinksEl.classList.remove ('active');
+        console.log("in the function: removed") ;
+        localStorage.setItem("navactive", false);
+    }
+    else {
+        navbarLinksEl.classList.add('active');
+        console.log("in the function: added") ;
+        localStorage.setItem("navactive", true);
+    }
+    console.log(navbarLinksEl.classList.contains('active'));    
+});
 
 
 setInterval(()=>{
@@ -72,15 +106,15 @@ $ajaxUtils.sendGetRequest('data/towns.csv',function(responseText){
 var updateWeather = function getWeather (latitude, longitude){
 // var loc = navigator.geolocation.getCurrentPosition((success)=>{
 //     let {latitude,longitude} = success.coords ;
-    console.log ("0  "+latitude+" "+longitude)
+    // console.log ("0  "+latitude+" "+longitude)
     // latitude = 42.4501 ;
     // longitude = -73.2454 ;
     latitude = latitude * 1. ;
     longitude = longitude * 1. ;
-    console.log (latitude+ "  "+ longitude )
+    // console.log (latitude+ "  "+ longitude )
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=imperial&exclude=hourly,minutely&appid=${apikey}`)
     .then(res =>res.json()).then (data=> {
-        console.log(data) ;
+        // console.log(data) ;
             showWeatherData(data) ;
             
         }) 
@@ -103,10 +137,10 @@ function showWeatherData(data){
     const sunset_convert = getHHMM(sunset, data.timezone_offset) ;
     const iconName = "http://openweathermap.org/img/w/" +data.current.weather[0].icon+".png" ;
     const curdesc = "Currently: "+data.current.weather[0].description;
-    console.log("icon is " + iconName) ;
+        // console.log("icon is " + iconName) ;
     
 
-    console.log(sunrise_convert) ;
+    
     currentweatherEl.innerHTML =
     `<div class="weather-item">
     <img src=${iconName}  class="weather-icon" alt='Icon depicting current weather.'>
