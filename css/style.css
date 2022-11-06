@@ -31,20 +31,21 @@ header {
     z-index: 999 ;
     padding: 15px ;
     color : var(--color-text-dark);
-
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
 }
 
-.navbar {
-    /* display: none ; */
+/* .navbar {
+    
     background: var(--background);
     position: fixed ;
-    /* text-align: left ; */
     display: flex ;
     justify-content: space-between ;
     align-items: center ;
 
     width: 100% ;
-}
+} */
 
 .navbar ul {
     list-style: none ;
@@ -68,16 +69,28 @@ header {
 
 
 .navbar-links li:hover, .navbar-links li:focus{
-    text-decoration: underline;
-    color: blueviolet;
+    text-decoration: none ;
+    color: var(--color-text-dark) ;
     background-color: dodgerblue ;
     border-radius:5px ;
 }
 
+.navbar-links li a:hover { 
+    text-decoration: none ;
+    color: white ;
+    background-color: dodgerblue ;
+    border-radius:5px ;
+}
+
+.navbar-links li a:focus {
+    background-color : lightgreen ;
+}
+
+
 .toggle-button {
     position: absolute ;
-    top : .75rem ;
-    right: .4rem ;
+    top : 3rem ;
+    right: .8rem ; 
     display: none ;
     flex-direction: column ;
     justify-content : space-between ;
@@ -89,7 +102,8 @@ header {
 .toggle-button span.bar {
     height: 3px ;
     width: 30px;
-    background-color: white;
+    /* background-color: white; */
+    background-color: var(--color-text-dark) ;
     border-radius: 10px ;
     display: block ;
 }
@@ -289,10 +303,15 @@ header {
     align-self: center ;
 }
 
-@media (max-width:480px){
+@media (max-width:768px){
     .toggle-button {
         display: flex ;
     }
+
+    .navbrand h2 {
+        display: none ;
+    }
+
     .navbar {
         flex-direction: column;
         align-items: flex-start ;
@@ -312,11 +331,11 @@ header {
     }
 
     .navbar-links ul li a{
-        padding: .5rem 3rem ;
+        padding: .2rem .2rem ;
     }
     .active.navbar-links {
         display: flex ;
-    }
+    } 
 
     .top-tiles {
         display: flex ;
@@ -334,6 +353,23 @@ header {
         padding: 10px ;
         margin: 0 ;
         font-size : 1.1rem ;
+    }
+
+    .weather-select * {
+        font-size: .7rem ;
+       
+    }
+    .weather-select, .date-time {
+        font-size: .9rem ;
+        width: 60% ;
+        margin-top: 10px ;
+    }
+    .weather-select{
+        order:1 ;
+    }
+
+    .priority-low{
+        display:none ;
     }
     
 }

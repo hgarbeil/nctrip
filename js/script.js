@@ -26,31 +26,35 @@ Number.prototype.padLeft = function(base,chr){
 
 
 
-activeFlag = localStorage.getItem ("navactive") ;
-console.log(activeFlag);
-if (activeFlag==true){
-    console.log("in localStorage") ;
-    navbarLinksEl.classList.add('active');
+// activeFlag = localStorage.getItem ("navactive") ;
+// console.log(activeFlag);
+// if (activeFlag==true){
+//     console.log("in localStorage") ;
+//     navbarLinksEl.classList.add('active');
+// }
+
+function decollapse() {
+    navbarLinksEl.classList.remove('active');
+
 }
-for (let classy of navbarLinksEl.classList){
-    console.log(classy) ;
-}
+
+
 toggleButtonEl.addEventListener('click',()=>{
 // function hamburger(){  
-    
-    classList = navbarLinksEl.classList ;
-    // console.log("hello"+) ;
-    if (navbarLinksEl.classList.contains('active')){
-        navbarLinksEl.classList.remove ('active');
-        console.log("in the function: removed") ;
-        localStorage.setItem("navactive", false);
-    }
-    else {
-        navbarLinksEl.classList.add('active');
-        console.log("in the function: added") ;
-        localStorage.setItem("navactive", true);
-    }
-    console.log(navbarLinksEl.classList.contains('active'));    
+    navbarLinksEl.classList.toggle('active');
+    // classList = navbarLinksEl.classList ;
+    // // console.log("hello"+) ;
+    // if (navbarLinksEl.classList.contains('active')){
+    //     navbarLinksEl.classList.remove ('active');
+    //     console.log("in the function: removed") ;
+    //     localStorage.setItem("navactive", false);
+    // }
+    // else {
+    //     navbarLinksEl.classList.add('active');
+    //     console.log("in the function: added") ;
+    //     localStorage.setItem("navactive", true);
+    // }
+    // console.log(navbarLinksEl.classList.contains('active'));    
 });
 
 
@@ -208,7 +212,7 @@ function loadMap (){
 
 function loadHikes () {
 
-    
+    decollapse() ;
     mainEl.innerHTML = `<div class="topdiv">
     <h1>Activities and Hikes</h1>
     <!-- <div class="mapimg"> -->
@@ -313,7 +317,7 @@ $ajaxUtils.sendGetRequest ('data/hike.csv', function(responseText){
 
 function loadActivities() {
 
-    
+    decollapse() ;
     mainEl.innerHTML = `<div class="topdiv">
     <h1>Selected Activities</h1>
     <!-- <div class="mapimg"> -->
